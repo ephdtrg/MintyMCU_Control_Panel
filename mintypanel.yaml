@@ -1,0 +1,70 @@
+esphome:
+  name: mintymcu_panel
+  platform: ESP8266
+  board: d1_mini_lite
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  power_save_mode: none
+  fast_connect: True
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: !secret ap_ssid
+    password: !secret ap_password
+
+captive_portal:
+
+# Enable logging
+logger:
+  level: VERBOSE
+
+# Enable Home Assistant API
+api:
+  password: !secret api_password
+
+ota:
+  password: !secret ota_password
+
+switch:
+  # System
+  - platform: restart
+    name: "MintyMCU_Control_Panel Restart"
+
+sensor:
+  - platform: wifi_signal
+    name: "MintyMCU_Control_Panel WiFi Signal Sensor"
+    update_interval: 60s
+  - platform: uptime
+    name: "MintyMCU_Control_Panel Uptime Sensor"
+    update_interval: 60s
+    filters:
+      - lambda: return x / (24 * 3600);
+    unit_of_measurement: "days"
+  - platform: rotary_encoder
+    name: "MintyMCU_Control_Panel Rotary Encoder"
+    pin_a: D1
+    pin_b: D2
+
+binary_sensor:
+    - platform: status
+      name: "MintyMCU_Control_Panel Status"
+    - platform: template
+      name: "MintyMCU_Control_Panel Volume Mute Trigger Sensor"
+      id: sensor_trigger_speakers_mute
+    - platform: template
+      name: "MintyMCU_Control_Panel Power Trigger Sensor"
+      id: sensor_trigger_speakers_power
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "MintyMCU_Control_Panel IP Address"
+    ssid:
+      name: "MintyMCU_Control_Panel Connected SSID"
+    bssid:
+      name: "MintyMCU_Control_Panel Connected BSSID"
+  - platform: version
+    name: "MintyMCU_Control_Panel ESPHome Version"
+
+# secret: !include secrets.yaml
