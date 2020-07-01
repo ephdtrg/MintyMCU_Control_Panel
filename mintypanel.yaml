@@ -26,6 +26,10 @@ api:
 ota:
   password: !secret ota_password
 
+i2c:
+  sda: D1
+  scl: D2
+
 switch:
   # System
   - platform: restart
@@ -39,6 +43,14 @@ switch:
       - switch.turn_on: switch_panel_led
       - delay: 500ms
       - switch.turn_off: switch_panel_led
+
+display:
+  - platform: ssd1306_i2c
+    model: "SSD1306 128x32"
+    # reset_pin: D0
+    address: 0x3C
+    lambda: |-
+      it.print("Hello World!");
 
 sensor:
   - platform: wifi_signal
