@@ -30,6 +30,15 @@ switch:
   # System
   - platform: restart
     name: "MintyMCU_Control_Panel Restart"
+  - platform: gpio
+    pin: D3
+    id: switch_panel_led
+  - platform: template
+    name: "MintyMCU_Control_Panel LED"
+    turn_on_action:
+      - switch.turn_on: switch_panel_led
+      - delay: 500ms
+      - switch.turn_off: switch_panel_led
 
 sensor:
   - platform: wifi_signal
@@ -43,8 +52,31 @@ sensor:
     unit_of_measurement: "days"
   - platform: rotary_encoder
     name: "MintyMCU_Control_Panel Rotary Encoder"
-    pin_a: D1
-    pin_b: D2
+    pin_a: D5
+    pin_b: D6
+    resolution: 1
+    min_value: 0
+    max_value: 60
+  - platform: adc
+    pin: A0
+    name: "MintyMCU_Control_Panel Pin Buttons"
+    update_interval: 1s
+    unit_of_measurement: code
+    id: panel_adc_sensor
+    filters:
+      - lambda: |-
+          return ( x * (1023 / 3.3));
+#      - lambda: |-
+#          return (x * 100000000);
+      - lambda: |-
+          if (x > 100) {
+            return x;
+          } else {
+            return 0.0;
+          }
+      # - filter_out: 0.0
+      # - filter_out: 585.93758
+      # - filter_out: 488.28125
 
 binary_sensor:
     - platform: status
@@ -55,6 +87,17 @@ binary_sensor:
     - platform: template
       name: "MintyMCU_Control_Panel Power Trigger Sensor"
       id: sensor_trigger_speakers_power
+    - platform: template
+      name: "MintyMCU_Control_Panel Button K7"
+      id: sensor_panel_button_k7
+      lambda: |-
+        if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+          // Button pressed.
+          return true;
+        } else {
+          // Button not pressed.
+          return false;
+        }
 
 text_sensor:
   - platform: wifi_info
