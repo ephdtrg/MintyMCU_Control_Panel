@@ -44,13 +44,18 @@ switch:
       - delay: 500ms
       - switch.turn_off: switch_panel_led
 
+font:
+  - file: "OpenSans-Regular.ttf"
+    id: font_opensans
+    size: 20
+
 display:
   - platform: ssd1306_i2c
     model: "SSD1306 128x32"
     # reset_pin: D0
     address: 0x3C
     lambda: |-
-      it.print("Hello World!");
+      it.print(0, 0, id(font_opensans), "Hello World!");
 
 sensor:
   - platform: wifi_signal
