@@ -83,8 +83,6 @@ sensor:
     filters:
       - lambda: |-
           return ( x * (1023 / 3.3));
-#      - lambda: |-
-#          return (x * 100000000);
       - lambda: |-
           if (x > 100) {
             return x;
@@ -105,14 +103,148 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Power Trigger Sensor"
       id: sensor_trigger_speakers_power
     - platform: template
-      name: "MintyMCU_Control_Panel Button K7"
-      id: sensor_panel_button_k7
+        name: "MintyMCU_Control_Panel Upper Button K1"
+        id: sensor_panel_button_upper_k0
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+
+    - platform: template
+        name: "MintyMCU_Control_Panel Upper Button K1"
+        id: sensor_panel_button_upper_k1
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Upper Button K2"
+        id: sensor_panel_button_upper_k2
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Upper Button K3"
+        id: sensor_panel_button_upper_k3
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Upper Button K4"
+        id: sensor_panel_button_upper_k4
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Upper Button K5"
+        id: sensor_panel_button_upper_k5
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Upper Button K6"
+        id: sensor_panel_button_upper_k6
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Upper Button K7"
+        id: sensor_panel_button_upper_k7
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Lower Button K0"
+        id: sensor_panel_button_lower_k0
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Lower Button K1"
+        id: sensor_panel_button_lower_k1
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Lower Button K2"
+        id: sensor_panel_button_lower_k2
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Lower Button K3"
+        id: sensor_panel_button_lower_k3
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Lower Button K4"
+        id: sensor_panel_button_lower_k4
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Lower Button K5"
+        id: sensor_panel_button_lower_k5
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+        name: "MintyMCU_Control_Panel Lower Button K6"
+        id: sensor_panel_button_lower_k6
+        lambda: |-
+          if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+            return true;
+          } else {
+            return false;
+          }
+    - platform: template
+      name: "MintyMCU_Control_Panel Lower Button K7"
+      id: sensor_panel_button_lower_k7
       lambda: |-
         if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
-          // Button pressed.
           return true;
         } else {
-          // Button not pressed.
           return false;
         }
 
