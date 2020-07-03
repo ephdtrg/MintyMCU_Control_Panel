@@ -46,8 +46,8 @@ switch:
 
 font:
   - file: "OpenSans-Regular.ttf"
-    id: font_opensans
-    size: 20
+    id: font_opensans_16
+    size: 16
 
 display:
   - platform: ssd1306_i2c
@@ -55,7 +55,7 @@ display:
     # reset_pin: D0
     address: 0x3C
     lambda: |-
-      it.print(0, 0, id(font_opensans), "Hello World!");
+      it.printf(0, 0, id(font), "From HASS: %s", id(mysensor).state.c_str());
 
 sensor:
   - platform: wifi_signal
@@ -258,5 +258,9 @@ text_sensor:
       name: "MintyMCU_Control_Panel Connected BSSID"
   - platform: version
     name: "MintyMCU_Control_Panel ESPHome Version"
+  - platform: mqtt_subscribe
+    name: "MintyMCU_Control_Panel Display Info"
+    id: text_panel_display
+    topic: mintymcu/control_panel_display
 
 # secret: !include secrets.yaml
