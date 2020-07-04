@@ -77,7 +77,7 @@ sensor:
   - platform: adc
     pin: A0
     name: "MintyMCU_Control_Panel Pin Buttons"
-    update_interval: 1s
+    update_interval: 0.5s
     unit_of_measurement: code
     id: panel_adc_sensor
     filters:
