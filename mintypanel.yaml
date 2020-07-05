@@ -57,6 +57,9 @@ font:
     id: font_opensans_12
     size: 12
   - file: "OpenSans-Regular.ttf"
+      id: font_opensans_16
+      size: 16
+  - file: "OpenSans-Regular.ttf"
     id: font_opensans_21
     size: 21
 
@@ -73,8 +76,8 @@ display:
           it.printf(92, 5, id(font_opensans_12), " %s%%", id(text_panel_display_humidity).state.c_str());
           it.printf(58, 20, id(font_opensans_10), "%.1f° outside", id(text_panel_display_weather).state);
       - id: button_page
-          lambda: |-
-            it.printf(0, 0, id(font_opensans_21), "%s button pressed°, ", id(text_panel_display_button).state.c_str());
+        lambda: |-
+          it.printf(0, 5, id(font_opensans_16), "%s button pressed°, ", id(text_panel_display_button).state.c_str());
 
 
 sensor:
@@ -293,6 +296,8 @@ text_sensor:
     on_value:
       then:
         - display.page.show: button_page
+        - delay: 3s
+        - display.page.show: main_page
 
 #  - platform: mqtt_subscribe
 #    name: "MintyMCU_Control_Panel Display Buttons Info"
