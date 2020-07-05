@@ -23,6 +23,11 @@ logger:
 api:
   password: !secret api_password
 
+mqtt:
+  broker: !secret mqtt_broker
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+
 ota:
   password: !secret ota_password
 
@@ -55,7 +60,7 @@ display:
     # reset_pin: D0
     address: 0x3C
     lambda: |-
-      it.printf(0, 0, id(font), "From HASS: %s", id(mysensor).state.c_str());
+      it.printf(0, 0, id(font_opensans_16), "From HASS: %s", id(text_panel_display).state.c_str());
 
 sensor:
   - platform: wifi_signal
