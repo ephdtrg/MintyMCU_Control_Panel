@@ -295,9 +295,16 @@ text_sensor:
     id: text_panel_display_button
     on_value:
       then:
-        - display.page.show: button_page
-        - delay: 3s
-        - display.page.show: main_page
+        - if:
+            condition:
+              not:
+                text_sensor.state:
+                  id: text_panel_display_button
+                  state: 'None'
+        - then:
+          - display.page.show: button_page
+          - delay: 3s
+          - display.page.show: main_page
 
 #  - platform: mqtt_subscribe
 #    name: "MintyMCU_Control_Panel Display Buttons Info"
