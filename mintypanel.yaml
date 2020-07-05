@@ -51,8 +51,8 @@ switch:
 
 font:
   - file: "OpenSans-Regular.ttf"
-      id: font_opensans_10
-      size: 10
+    id: font_opensans_10
+    size: 10
   - file: "OpenSans-Regular.ttf"
     id: font_opensans_12
     size: 12
