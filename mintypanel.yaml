@@ -72,8 +72,8 @@ sensor:
     pin_a: D5
     pin_b: D6
     resolution: 1
-    min_value: 0
-    max_value: 60
+    min_value: -100
+    max_value: 100
   - platform: adc
     pin: A0
     name: "MintyMCU_Control_Panel Pin Buttons"
