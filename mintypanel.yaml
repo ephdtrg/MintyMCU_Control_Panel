@@ -57,8 +57,8 @@ font:
     id: font_opensans_12
     size: 12
   - file: "OpenSans-Regular.ttf"
-      id: font_opensans_16
-      size: 16
+    id: font_opensans_16
+    size: 16
   - file: "OpenSans-Regular.ttf"
     id: font_opensans_21
     size: 21
