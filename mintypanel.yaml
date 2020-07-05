@@ -64,9 +64,9 @@ display:
     address: 0x3C
     lambda: |-
       it.strftime(0, 0, id(font_opensans_20), "%H:%M", id(homeassistant_time).now());
-      it.printf(45, 5, id(font_opensans_12), "Room: %s,", id(text_panel_display_temperature).state.c_str());
-      it.printf(110, 5, id(font_opensans_12), "h: %s", id(text_panel_display_humidity).state.c_str());
-      it.printf(45, 20, id(font_opensans_12), "W: %.1f", id(text_panel_display_weather).state);
+      it.printf(50, 5, id(font_opensans_12), "t: %s, ", id(text_panel_display_temperature).state.c_str());
+      it.printf(100, 5, id(font_opensans_12), "h: %s", id(text_panel_display_humidity).state.c_str());
+      it.printf(50, 20, id(font_opensans_12), "Outside: %.1f", id(text_panel_display_weather).state);
 
 
 sensor:
