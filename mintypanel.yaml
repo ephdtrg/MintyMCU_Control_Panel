@@ -140,7 +140,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Upper Button K1"
       id: sensor_panel_button_upper_k1
       lambda: |-
-        if (id(panel_adc_sensor).state >= 149.0 && id(panel_adc_sensor).state <= 150.5) {
+        if (id(panel_adc_sensor).state >= 149.0 && id(panel_adc_sensor).state <= 150.0) {
           return true;
         } else {
           return false;
@@ -149,7 +149,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Upper Button K2"
       id: sensor_panel_button_upper_k2
       lambda: |-
-        if (id(panel_adc_sensor).state >= 150.6 && id(panel_adc_sensor).state <= 152.0) {
+        if (id(panel_adc_sensor).state >= 150.1 && id(panel_adc_sensor).state <= 152.0) {
           return true;
         } else {
           return false;
@@ -176,7 +176,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Upper Button K5"
       id: sensor_panel_button_upper_k5
       lambda: |-
-        if (id(panel_adc_sensor).state >= 164.0 && id(panel_adc_sensor).state <= 164.9) {
+        if (id(panel_adc_sensor).state >= 164.0 && id(panel_adc_sensor).state <= 164.8) {
           return true;
         } else {
           return false;
@@ -185,7 +185,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Upper Button K6"
       id: sensor_panel_button_upper_k6
       lambda: |-
-        if (id(panel_adc_sensor).state >= 165.0 && id(panel_adc_sensor).state <= 166.5) {
+        if (id(panel_adc_sensor).state >= 164.81 && id(panel_adc_sensor).state <= 165.9) {
           return true;
         } else {
           return false;
@@ -194,7 +194,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Upper Button K7"
       id: sensor_panel_button_upper_k7
       lambda: |-
-        if (id(panel_adc_sensor).state >= 167.0 && id(panel_adc_sensor).state <= 168.0) {
+        if (id(panel_adc_sensor).state >= 166.0 && id(panel_adc_sensor).state <= 168.0) {
           return true;
         } else {
           return false;
@@ -212,7 +212,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Lower Button K1"
       id: sensor_panel_button_lower_k1
       lambda: |-
-        if (id(panel_adc_sensor).state >= 197.0 && id(panel_adc_sensor).state <= 199.5) {
+        if (id(panel_adc_sensor).state >= 196.0 && id(panel_adc_sensor).state <= 199.5) {
           return true;
         } else {
           return false;
@@ -230,7 +230,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Lower Button K3"
       id: sensor_panel_button_lower_k3
       lambda: |-
-        if (id(panel_adc_sensor).state >= 216.0 && id(panel_adc_sensor).state <= 220.0) {
+        if (id(panel_adc_sensor).state >= 215.0 && id(panel_adc_sensor).state <= 220.0) {
           return true;
         } else {
           return false;
@@ -239,7 +239,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Lower Button K4"
       id: sensor_panel_button_lower_k4
       lambda: |-
-        if (id(panel_adc_sensor).state >= 223.0 && id(panel_adc_sensor).state <= 224.9) {
+        if (id(panel_adc_sensor).state >= 222.1 && id(panel_adc_sensor).state <= 224.2) {
           return true;
         } else {
           return false;
@@ -248,7 +248,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Lower Button K5"
       id: sensor_panel_button_lower_k5
       lambda: |-
-        if (id(panel_adc_sensor).state >= 225.0 && id(panel_adc_sensor).state <= 226.5) {
+        if (id(panel_adc_sensor).state >= 224.6 && id(panel_adc_sensor).state <= 226.5) {
           return true;
         } else {
           return false;
@@ -257,7 +257,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Lower Button K6"
       id: sensor_panel_button_lower_k6
       lambda: |-
-        if (id(panel_adc_sensor).state >= 227.0 && id(panel_adc_sensor).state <= 229.9) {
+        if (id(panel_adc_sensor).state >= 227.0 && id(panel_adc_sensor).state <= 229.1) {
           return true;
         } else {
           return false;
@@ -266,7 +266,7 @@ binary_sensor:
       name: "MintyMCU_Control_Panel Lower Button K7"
       id: sensor_panel_button_lower_k7
       lambda: |-
-        if (id(panel_adc_sensor).state >= 230.0 && id(panel_adc_sensor).state <= 231) {
+        if (id(panel_adc_sensor).state >= 229.5 && id(panel_adc_sensor).state <= 234) {
           return true;
         } else {
           return false;
