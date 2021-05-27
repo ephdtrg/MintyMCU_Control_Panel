@@ -65,7 +65,7 @@ font:
 
 display:
   - platform: ssd1306_i2c
-    model: "SSD1306 128x32"
+    model: "SSD1306 128x64"
     # reset_pin: D0
     address: 0x3C
     pages:
